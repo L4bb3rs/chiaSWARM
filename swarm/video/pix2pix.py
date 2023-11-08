@@ -113,11 +113,7 @@ def download_video(tmpdir, video_uri):
                     f.flush()
                     os.fsync(f.fileno())
     else:  # HTTP status code 4XX/5XX
-        print(
-            "Download failed: status code {}\n{}".format(
-                response.status_code, response.text
-            )
-        )
+        print(f"Download failed: status code {response.status_code}\n{response.text}")
 
     return file_path
 
